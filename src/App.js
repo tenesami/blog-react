@@ -9,7 +9,7 @@ import Article from './pages/Article';
 import ArticleList from './pages/ArticleList';
 import HomePage from './pages/HomePage';
 import './App.css';
-
+import NavBar from './NavBar';
 
 
 class App extends Component {
@@ -18,6 +18,7 @@ class App extends Component {
 
       <Router>
         <div className="App">
+          <NavBar/>
           <div id="page-body">
             <Route path="/" component={HomePage} exact />
             <Route path="/about" component={About}></Route>
