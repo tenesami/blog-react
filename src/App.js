@@ -21,9 +21,9 @@ class App extends Component {
           <NavBar/>
           <div id="page-body">
             <Route path="/" component={HomePage} exact />
-            <Route path="/about" component={About}></Route>
-            <Route path="/article-list" component={ArticleList}></Route>
-            <Route path="/article" component={Article}></Route>
+            <Route path="/about" component={About} />
+            <Route path="/article-list" component={ArticleList} />
+            <Route path="/article/:name" component={Article} />
           </div>
         </div>
       </Router>
