@@ -10,10 +10,7 @@ const NavBar = () => (
                 <Link to="/about">About</Link>
             </li>
             <li>
-                <Link to="article-list">Article</Link>
-            </li>
-            <li>
-                <Link to="/article-list">Artilce List</Link>
+                <Link to="articles-list">Article</Link>
             </li>
         </ul>    
     </nav>
