@@ -1,16 +1,17 @@
 import React from 'react';
-
+import articleContent from './ArticleContent';
+import {Link} from 'react-router-dom';
 const ArticleList = () => (
     <>
     <h1>Hello, Here is my Article list!</h1>
-    <p>
-        Welcome to my blog! Proin congue
-        ligula id risus posuere, vel eleifend ex egestas. Sed in turpis leo. 
-        Aliquam malesuada in massa tincidunt egestas. Nam consectetur varius turpis, 
-        non porta arcu porttitor non. In tincidunt vulputate nulla quis egestas. Ut 
-        eleifend ut ipsum non fringilla. Praesent imperdiet nulla nec est luctus, at 
-        sodales purus euismod.
-    </p>
+
+    {articleContent.map((article, key) => (
+        <Link className="article-list-item" key={key} to={`/article/${article.name}`}>
+            <h3>{article.title}</h3>
+            <p>{article.content[0].substring(0, 150)}...</p>
+        </Link>
+        
+    ))}
    
     </>
 );
