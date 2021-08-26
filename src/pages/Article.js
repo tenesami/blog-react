@@ -1,18 +1,18 @@
 import React from 'react';
+import articleContent from './ArticleContent';
+const Article = ({match}) => {
+    const name = match.params.name;
+    const article = articleContent.find(article => article.name === name)
 
-const Article = () => (
-    <>
-    <h1>Hello, welcome to my article!</h1>
-    <p>
-        Welcome to my blog! Proin congue
-        ligula id risus posuere, vel eleifend ex egestas. Sed in turpis leo. 
-        Aliquam malesuada in massa tincidunt egestas. Nam consectetur varius turpis, 
-        non porta arcu porttitor non. In tincidunt vulputate nulla quis egestas. Ut 
-        eleifend ut ipsum non fringilla. Praesent imperdiet nulla nec est luctus, at 
-        sodales purus euismod.
-    </p>
-    
-    </>
-);
+    if(!article) return <h1>Article Does not Exist!</h1>
+    return (
+        <>
+        <h1>Welcome to the {article.title} my article!</h1>
+        {article.content.map((para, key) => (
+            <p>{para}</p>
+        ))}
+        </>
+    );
+    }
 
 export default Article;
